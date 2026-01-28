@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GUC Downloader</title>
+  <style>
+    body {
+      width: 320px;
+      padding: 0;
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f5f5f5;
+    }
+    
+    .header {
+      background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+      color: white;
+      padding: 16px;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .header h1 {
+      margin: 0;
+      font-size: 18px;
+      font-weight: 600;
+    }
+    
+    .header p {
+      margin: 4px 0 0 0;
+      font-size: 12px;
+      opacity: 0.9;
+    }
+    
+    .container {
+      padding: 12px;
+    }
+    
+    .option {
+      background-color: white;
+      margin-bottom: 8px;
+      padding: 12px;
+      border-radius: 6px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      transition: all 0.2s;
+    }
+    
+    .option:hover {
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
+    
+    .option label {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      font-size: 13px;
+      color: #333;
+    }
+    
+    .option input[type="checkbox"] {
+      margin-right: 10px;
+      width: 16px;
+      height: 16px;
+      cursor: pointer;
+      accent-color: #4CAF50;
+    }
+    
+    .option-text {
+      flex: 1;
+      line-height: 1.4;
+    }
+    
+    .status {
+      margin: 12px;
+      padding: 8px;
+      border-radius: 4px;
+      text-align: center;
+      font-size: 12px;
+      display: none;
+    }
+    
+    .status.success {
+      background-color: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+    }
+    
+    .footer {
+      padding: 12px;
+      text-align: center;
+      background-color: white;
+      border-top: 1px solid #e0e0e0;
+    }
+    
+    .footer button {
+      padding: 8px 16px;
+      font-size: 13px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      margin: 0 4px;
+    }
+    
+    .btn-reset {
+      background-color: #f44336;
+      color: white;
+    }
+    
+    .btn-reset:hover {
+      background-color: #da190b;
+    }
+    
+    .btn-full-options {
+      background-color: #2196F3;
+      color: white;
+    }
+    
+    .btn-full-options:hover {
+      background-color: #0b7dda;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>GUC Downloader</h1>
+    <p>Configure file naming</p>
+  </div>
+  
+  <div class="container">
+    <div class="option">
+      <label>
+        <input type="checkbox" id="removeCourseNameFromFile">
+        <span class="option-text">Remove course name from file</span>
+      </label>
+    </div>
+    
+    <div class="option">
+      <label>
+        <input type="checkbox" id="removeParenthesesFromCourseName">
+        <span class="option-text">Remove parentheses from course name</span>
+      </label>
+    </div>
+    
+    <div class="option">
+      <label>
+        <input type="checkbox" id="removeNumberPrefix">
+        <span class="option-text">Remove number prefix from content</span>
+      </label>
+    </div>
+  </div>
+  
+  <div class="status" id="status"></div>
+  
+  <div class="footer">
+    <button class="btn-reset" id="reset">Reset</button>
+    <button class="btn-full-options" id="fullOptions">Full Options</button>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>
